@@ -59,6 +59,14 @@
       <Project>{A96DCA45-F433-4110-AEC5-0BD1E7945677}</Project>
       <Name>ItWorksAssessment.Library</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ItWorksAssessment.DocumentApplication\ItWorksAssessment.DocumentApplication.csproj">
+      <Project>{FAC2AD2C-8F26-4DB8-B92B-426267C6ABC6}</Project>
+      <Name>ItWorksAssessment.DocumentApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ItWorksAssessment.Models\ItWorksAssessment.Models.csproj">
+      <Project>{189844F0-D9F9-4B37-990A-7B054FA1EF96}</Project>
+      <Name>ItWorksAssessment.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ItWorksAssessment.Library;
+using ItWorksAssessment.Models;
 
 namespace ItWorksAssessment.Tests
 {
@@ -9,6 +10,37 @@ namespace ItWorksAssessment.Tests
     {
         private ItWorksAssessmentService _itWorksAssessmentService;
 
+        private static IDocument CreateQuickDocument()
+        {
+            return new QuickDocument
+            {
+                Name = "Quick Document",
+                Content = "Quick Document Content..."                
+            };
+        }
+
+       
+
+        private static IDocument CreateStandardDocument()
+        {
+            return new StandardDocument
+            {
+                Name = "Standard Document",
+                Content = "Standard Document Content",
+                NumberOfCopies = 5
+            };
+        }
+
+        private static IDocument CreateSlowDocument()
+        {
+            return new SlowDocument
+            {
+                Name = "Slow Document",
+                Content = "Slow Document Content",
+                NumberOfCopies = 7,
+                Delay = 5
+            };
+        }
 
         public ItWorksAssessmentTests()
         {
@@ -72,5 +104,44 @@ namespace ItWorksAssessment.Tests
             //Assert
             CollectionAssert.AreEqual(myArray, result);
         }
+
+
+        #region Document Application tests
+        [TestMethod]
+        public void ShouldCallQuickDocumentPrintMethod()
+        {
+            //Arrange
+            IDocument document = CreateQuickDocument();
+            //Act
+            document.Print();
+
+            //Assert
+            //console
+        }
+
+        [TestMethod]
+        public void ShouldCallStandardDocumentPrintMethod()
+        {
+            //Arrange
+            IDocument document = CreateStandardDocument();
+            //Act
+            document.Print();
+
+            //Assert
+            //console
+        }
+
+        [TestMethod]
+        public void ShouldCallSlowDocumentPrintMethod()
+        {
+            //Arrange
+            IDocument document = CreateSlowDocument();
+            //Act
+            document.Print();
+
+            //Assert
+            //console
+        }
+        #endregion
     }
 }

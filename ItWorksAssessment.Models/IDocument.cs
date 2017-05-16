@@ -4,7 +4,6 @@
     {
         string Name { get; set; }
         string Content { get; set; }
-        void Print();
-
+        void Print();       
     }
 }

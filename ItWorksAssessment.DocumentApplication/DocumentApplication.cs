@@ -25,7 +25,6 @@ namespace ItWorksAssessment.DocumentApplication
         {
             return new QuickDocument();
         }
-
         private static void GetDocumentName(IDocument document)
         {
             try
@@ -49,9 +48,7 @@ namespace ItWorksAssessment.DocumentApplication
             {
                 Console.WriteLine(ex.Message);
             }
-        }
-
-     
+        }    
   
     }
 }
