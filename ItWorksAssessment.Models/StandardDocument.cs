@@ -9,7 +9,7 @@ namespace ItWorksAssessment.Models
         {
             Console.WriteLine("Print Method :: Standard Document Class");
 
-            for (int i = 1; i < NumberOfCopies; i++)
+            for (int i = 1; i <= NumberOfCopies; i++)
             {
                 WriteResults(this);
             }

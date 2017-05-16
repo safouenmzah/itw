@@ -1,0 +1,172 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<div class="row">
+    <form class="form-horizontal" id="printDocumentContentForm" autocomplete="off">
+
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="documentTypeSelect" class="col-md-5 control-label">
+                        Document Type:
+                    </label>
+                    <div class="col-md-7">
+                        <select class="form-control" id="documentTypeSelect">
+                            <option value="-1" selected>Choose Document Type</option>
+                            <option value="1">Slow Document</option>
+                            <option value="2">Standard Document</option>
+                            <option value="3">Quick Document</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!--#region document details -->
+
+            <!--#region quick document -->
+            <div class="col-md-7 hidden"            
+                 id="quickDocumentDetails">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="quickDocumentName" class="col-md-5 control-label">Document Name: </label>
+                        <div class="col-md-7">
+                            <input type="text" class="form-control" id="quickDocumentName" placeholder="Document Name" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quickDocumentContent" class="col-md-5 control-label">Document Content: </label>
+                        <div class="col-md-7">
+                            <textarea class="form-control" id="quickDocumentContent" rows="5" cols="30"
+                                      placeholder="Document Content">
+                        </textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--#endregion quick document -->
+
+            <!--#region standard document -->
+            <div class="col-md-7 hidden" id="standardDocumentDetails">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="standardDocumentName" class="col-md-5 control-label">Document Name: </label>
+                        <div class="col-md-7">
+                            <input type="text" class="form-control" id="standardDocumentName" placeholder="Document Name" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="standardDocumentContent" class="col-md-5 control-label">Document Content: </label>
+                        <div class="col-md-7">
+                            <textarea class="form-control" id="standardDocumentContent" rows="5" cols="30"
+                                      placeholder="Document Content">
+                        </textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="standardDocumentNumberOfCopiesSelect" class="col-md-5 control-label">
+                            Number Of Copies:
+                        </label>
+                        <div class="col-md-7">
+                            <select class="form-control" id="standardDocumentNumberOfCopiesSelect">
+                                <option value="-1" selected>Choose Number Of Copies</option>
+                                @{
+                                    for (int i = 1; i <= 100; i++)
+                                    {
+                                        <option value="@i">@i</option>
+                                    }
+                                }   
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--#endregion standard document -->
+
+            <!--#region slow document -->
+            <div class="col-md-7 hidden" id="slowDocumentDetails">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="slowDocumentName" class="col-md-5 control-label">Document Name: </label>
+                        <div class="col-md-7">
+                            <input type="text" class="form-control" id="slowDocumentName" placeholder="Document Name" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="slowDocumentContent" class="col-md-5 control-label">Document Content: </label>
+                        <div class="col-md-7">
+                            <textarea class="form-control" id="slowDocumentContent" rows="5" cols="30"
+                                      placeholder="Document Content">
+                        </textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="slowDocumentNumberOfCopiesSelect" class="col-md-5 control-label">
+                            Number Of Copies:
+                        </label>
+                        <div class="col-md-7">
+                            <select class="form-control" id="slowDocumentNumberOfCopiesSelect">
+                                <option value="-1" selected>Choose Number Of Copies</option>
+                                @{
+                                    for (int i = 1; i <= 100; i++)
+                                    {
+                                        <option value="@i">@i</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="slowDocumentPrintDelaySelect" class="col-md-5 control-label">
+                            Delay between Printouts:
+                        </label>
+                        <div class="col-md-7">
+                            <select class="form-control" id="slowDocumentPrintDelaySelect">
+                                <option value="-1" selected>Choose a Delay (s)</option>
+                                @{
+                                    for (int i = 1; i <= 30; i++)
+                                    {
+                                        <option value="@i">@i</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!--#endregion slow document -->
+
+            <!--#endregion document details -->
+
+
+           
+        </div>
+       
+        <div class="row">
+            <div class="col-md-4">
+                <button type="button" class="btn btn-default" id="resetBtn">Reset</button>
+                <button type="button" class="btn btn-primary" id="printBtn">Print</button>
+            </div>         
+        </div>
+
+        <br />
+        <br />
+        <hr />
+        <div class="well" id="printout">
+
+        </div>
+    </form>
+</div>
+<script src="~/Scripts/document.js"></script>

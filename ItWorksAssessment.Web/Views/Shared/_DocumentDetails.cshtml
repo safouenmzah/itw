@@ -1,0 +1,24 @@
+﻿@model ItWorksAssessment.Models.IDocument
+
+@{
+    ViewBag.Title = "Document Details";
+}
+
+
+
+
+<br />
+
+
+<ul class="list-unstyled">
+    <li>Print Date / Time: @DateTime.Now</li>
+    <li>
+        <h4>Document Name: </h4> @Model.Name
+    </li>
+    <li>
+        <h4>Document Content: </h4> @Model.Content
+    </li>
+</ul>
+
+
+

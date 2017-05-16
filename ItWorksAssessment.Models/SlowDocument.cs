@@ -11,7 +11,7 @@ namespace ItWorksAssessment.Models
         {
             Console.WriteLine("Print Method :: SLow Document Class");
 
-            for (int i = 1; i < NumberOfCopies; i++)
+            for (int i = 1; i <= NumberOfCopies; i++)
             {
                 Thread.Sleep(Delay * 1000);       
                 WriteResults(this);

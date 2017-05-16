@@ -1,0 +1,29 @@
+﻿@using System.Threading;
+@model ItWorksAssessment.Models.SlowDocument
+
+@{
+    ViewBag.Title = "Slow Document Details";
+}
+
+
+<h2>@ViewBag.Title</h2>
+
+<br />
+
+@{
+    for (int i = 1; i <= Model.NumberOfCopies; i++)
+    {
+        
+        <ul class="list-unstyled">
+            <li>Print Date / Time: @DateTime.Now</li>
+            <li>
+                <h4>Document Name: </h4>
+            </li>
+            <li>
+                <h4>Document Content: </h4>
+            </li>
+        </ul>
+        Thread.Sleep(Model.Delay * 1000);
+    }
+}
+
